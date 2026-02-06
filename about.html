@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Grand+Hotel&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>about</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Montserrat', sans-serif;
+            background: #f9f9f9;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section{
+            padding: 80px 10%;
+            background: #ffffff;
+        }
+
+        .about-container{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        /* LEFT IMAGE */
+        .about-left{
+            flex: 1;
+        }
+
+        .about-img{
+            border: 5px solid #6a8f3a;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .about-img img{
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* RIGHT CONTENT */
+        .about-right{
+            flex: 1;
+        }
+
+        .about-small{
+            font-family: 'Grand Hotel', cursive;
+            color: #6a8f3a;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about-title{
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .about-text{
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* BUTTON */
+        .btn{
+            display: inline-block;
+            padding: 15px 35px;
+            background: #6a8f3a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            border: 3px solid #3f5f1c;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background: #3f5f1c;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px){
+            .about-container{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="about-section">
+    <div class="about-container">
+
+        <!-- LEFT -->
+        <div class="about-left">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Tea">
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="about-right">
+            <div class="about-small">About Our</div>
+            <div class="about-title">TEA STATION</div>
+
+            <p class="about-text">
+                Once upon a time we only had a couple of teapots and enjoyed tea only with our family.
+                Over time, we were able to afford to buy a small tea plantation.
+            </p>
+
+            <p class="about-text">
+                Now we have a whole teahouse and we delight many people delicious and hot tea.
+                We serve black long tea, relaxing green and jasmine tea,
+                tea with spices and many others.
+            </p>
+
+            <a href="#" class="btn">LEARN MORE</a>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

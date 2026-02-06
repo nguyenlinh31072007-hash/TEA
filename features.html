@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>features</title>
+    <style>
+        #features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column;   
+            align-items: center; 
+            padding: 50px 0;
+            gap: 20px;
+        }
+
+        .feature_item {
+            flex: 1 1 20%;
+            width: 50%;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #e5e5e5;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature_title {
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            letter-spacing: calc(0.7rem - 0.2rem);
+            color: #698f3f;
+        }
+
+        .feature_text {
+            font-size: 1.6rem;
+            color: #3a3e3b;
+        }
+
+        .feature_item:hover {
+            border-color: #698f3f;
+            background-color: #698f3f;
+        }
+
+        .feature_item:hover .feature_title {
+            color: #e5e5e5;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="features">
+        <div class="feature_item">
+            <h4 class="feature_title">Made with love</h4>
+            <p class="feature_text">
+                Our tea iis made with love, from the collection of the leaves to the
+                brewing
+            </p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature_title">Rekaxation</h4>
+            <p class="feature_text">
+                Set aside axniety and relax after a hard day with a cup of hot tea in
+                your hands
+            </p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature_title">Energy</h4>
+            <p class="feature_text">
+                Our tea will energize you with vittamins and invigorate the rest of
+                the day
+            </p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature_title">Family recipe</h4>
+            <p class="feature_text">
+                All our recipes are pased down from generation to generatiuon for a
+                long time
+            </p>
+        </div>
+    </div>
+</body>
+</html>

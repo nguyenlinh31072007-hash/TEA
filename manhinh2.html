@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Grand+Hotel&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Specially Crafted Tea</title>
+    <style>
+        /* RESET */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body{
+            position: relative;
+        }
+
+        /* HEADER BACKGROUND (giả lập giống hình) */
+        .header {
+            height: 100vh;
+            background-image: 
+            linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+            url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .header__text-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .header__text-box h3{
+            font-family: "Grand Hotel", cursive;
+            color: rgb(120, 167, 73);
+            letter-spacing: 7px;
+            word-spacing: 5px;
+            font-size: 50px;
+            position: relative;
+            top: -190px;
+            white-space: nowrap;
+        }
+
+        .header__text-box h1{
+            font-size: 70px;
+            position: relative;
+            top: -90px;
+            letter-spacing: 10px;
+        }
+
+        .header__text-box .header__btn{
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 1rem 2rem; 
+            color: #3a3e3b;
+            background-color: #698f3f;
+            border: 2px solid #698f3f;
+            outline: 3px solid #698f3f;
+            outline-offset: 4px;
+        }
+
+        /* ===== TEXT ===== */
+        .heading_first {
+            display: block;
+            font-size: 2rem;
+            letter-spacing: 0.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .heading_first--animation {
+            animation: slideInRight 5s ease-in-out;
+        }
+
+        .heading_primary {
+            display: block;
+            font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: 0.8rem;
+            color: #fff;
+            margin-bottom: 3rem;
+            animation: slideInLeft 5s ease-in-out;
+        }
+
+        /* ===== BUTTON ===== */
+        .header__btn:link,
+        .header__btn:visited {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: #7cb342;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.7rem;
+            border: 2px solid #4e7d2c;
+            animation: show 2s 1s linear;
+            animation-fill-mode: backwards;
+        }
+
+        /* ===== KEYFRAMES ===== */
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0.1;
+                transform: translateX(-100%);
+            }
+      
+            50% {
+                opacity: 0.7;
+                transform: translateX(25%);
+            }
+      
+            75% {
+                opacity: 0.9;
+                transform: translateX(-10%);
+            }
+      
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                opacity: 0.1;
+                transform: translateX(100%);
+            }
+      
+            50% {
+                opacity: 0.7;
+                transform: translateX(-25%);
+            }
+      
+            75% {
+                opacity: 0.9;
+                transform: translateX(10%);
+            }
+      
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+                transform: scale(2);
+            }
+      
+            25% {
+                transform: scale(1.5);
+            }
+      
+            50% {
+                transform: scale(0.9);
+            }
+      
+            75% {
+                transform: scale(1.2);
+            }
+      
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__text-box">
+            <h3 class="heading_first heading_first--animation">
+                Over hunrred flavors of tea
+            </h3>
+            <h1 class="heading_primary">
+                SPECIALLY CRAFTED TEA
+            </h1>
+            <a href="#" class="header__btn">
+                Explore
+            </a>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#ffffff;
+        }
+
+        /* CONTACT SECTION */
+        .contact{
+            display:flex;
+            width:1200px;
+            margin:80px auto;
+            background:#f8d3d3;
+        }
+
+        /* LEFT */
+        .contact-left{
+            width:40%;
+            padding:50px;
+        }
+
+        .contact-left h3{
+            font-family: "Playwrite IN Guides", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size:24px;
+            margin-bottom:15px;
+        }
+
+        .contact-left p{
+            font-size:16px;
+            margin-bottom:35px;
+            line-height:1.6;
+        }
+
+        /* RIGHT */
+        .contact-right{
+            width:60%;
+            padding:50px;
+            background:#ffffff;
+        }
+
+        .contact-right h2{
+            text-align:center;
+            color:#6ba0a1;
+            margin-bottom:30px;
+        }
+
+        /* FORM */
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        .form-group input,
+        .form-group textarea{
+            width:100%;
+            padding:14px;
+            border:none;
+            background:#f8d3d3;
+            font-size:14px;
+            letter-spacing:4px;
+        }
+
+        .form-group textarea{
+            height:120px;
+            resize:none;
+        }
+
+        /* BUTTON */
+        .btn-submit{
+            width:100%;
+            padding:18px;
+            background:#3f4443;
+            color:#fff;
+            font-size:18px;
+            border:4px solid #ffffff;
+            outline:3px solid #3f4443;
+            cursor:pointer;
+        }
+
+        .btn-submit:hover{
+            background:#2f3332;
+        }
+    </style>
+</head>
+<body>
+    <section class="contact">
+
+        <!-- LEFT -->
+        <div class="contact-left">
+            <h3>ADDRESS</h3>
+            <p>
+                523 N FAIRFAX AVE<br>
+                LOS ANGELES, CA 90048
+            </p>
+
+            <h3>EMAIL</h3>
+            <p>THUYLINH@GMAIL.COM</p>
+
+            <h3>TELEPHONE</h3>
+            <p>+ 123 456 789</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="contact-right">
+            <h2>contact us</h2>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="N A M E">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" placeholder="E M A I L">
+                </div>
+
+                <div class="form-group">
+                    <textarea placeholder="M E S S A G E"></textarea>
+                </div>
+
+                <button class="btn-submit">SUBMIT HERE</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

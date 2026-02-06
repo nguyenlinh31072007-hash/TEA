@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <style>
+        
+        #product {
+            background-color: #3a3e3b;
+            font-family: "Catamaran", sans-serif;
+            padding: 5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        #product .heading_first {
+            font-family: "Grand Hotel", cursive;
+            color: #698f3f;
+            font-size: 3rem;
+        }
+
+        #product .heading_second {
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 4rem;
+        }
+
+        .product_item {
+            width: 30%;
+            padding: 3rem 0;
+            border-bottom: 5px solid #698f3f;
+            text-align: center;
+            flex: 1;              /* mỗi cột chiếm đều */
+            text-align: center;
+        }
+
+        #product .btn{
+            color: white;
+        }
+
+        .product_item img {
+            border: 1px solid #698f3f;
+            border-radius: 22px;
+        }
+
+        .products__text {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .product-item__title {
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 2rem;
+            letter-spacing: calc(0.7rem - 0.3rem);
+            margin: 2rem 0;
+        }
+
+        .product-item__price {
+            font-family: "Grand Hotel", cursive;
+            font-size: 2.6rem;
+            color: #698f3f;
+            font-weight: 700;
+        }
+
+        .product-item__price span {
+            margin-right: 1rem;
+            font-size: 3rem;
+            font-weight: 400;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid #7fb14d;
+            color: #7fb14d;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #7fb14d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="product">
+      <div class="product_item">
+        <h3 class="heading_first">Check Out</h3>
+        <h2 class="heading_second heading-second--white">Our products</h2>
+        <p class="products__text">
+          Our assortment includes long tea, relaxing and invigorating green tea
+          with spices, lemon juice, jasmine, cinnamon and anise, milk tea and
+          many others.
+        </p>
+        <a href="#" class="btn">Inventory</a>
+      </div>
+      <div class="product_item">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxyY4HrPFUCmjDzTqBYHor65_nVlARcFPzxQ&s"
+          width="80%"
+          alt="Hinh anh san pham"
+        /><br />
+        <h5 class="product-item__title">Black long tea</h5>
+        <p class="product-item__price"><span>$</span>3.99</p>
+      </div>
+      <div class="product_item">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkAcxDeYfHsglLyaWnFnUo7orFs3bk9TU-pA&s"
+          width="80%"
+          alt="Hinh anh san pham"
+        /><br />
+        <h5 class="product-item__title">Green tea with jasmine</h5>
+        <p class="product-item__price"><span>$</span>4.99</p>
+      </div>
+    </div>
+</body>
+</html>

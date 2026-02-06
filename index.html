@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Grand+Hotel&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Specially Crafted Tea</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        body{
+            position: relative;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:auto;
+        }
+        
+        /* top menu */
+        nav{
+            text-align: center;
+            width: 100%;
+        }
+
+        nav ul li{
+            display: inline-block;
+            padding: 10px;
+            font-size: 13px;
+            transition: 0.4s;
+        }
+
+        nav ul li:hover{
+            font-weight: bold;
+            background: rgb(216, 226, 153);
+        }
+
+        /* menu icon */
+        .menu-icon{
+            background: white;
+            font-size: 25px;
+            position: fixed;
+            border-radius: 7px;
+            top: 20px;
+            left: 20px;
+        } 
+
+        /* menu trái */
+        .left-menu {
+            border: 2px solid rgb(0, 200, 255);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: white;
+            width: 40%;
+            height: 100vh;
+            display: none;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .left-menu ul{
+            list-style: none;
+        }
+
+        .left-menu i{
+            font-size: 25px;
+            color: rgb(196, 45, 93);
+        }
+
+        .left-menu li{
+            padding: 10px;
+            font-weight: bold;
+            transition: 0.4s;
+        }
+
+        .left-menu li:hover{
+            transform: translateX(20px);
+            color: rgb(111, 183, 78);
+            background: rgb(220, 230, 227);
+        }
+
+        .left-menu a:hover{
+            color: rgb(111, 183, 78);
+            background: rgb(220, 230, 227);
+        }
+
+        .left-menu a{
+            text-decoration: none;
+            color: rgb(112, 226, 226);
+        }
+
+
+
+        /* features */
+        .features{
+            width: 100%;
+            height: 500px;
+            border: 2px splid red;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .features div{
+            border: 1px solid rgb(176, 176, 188);
+            text-align: center;
+            padding: 50px;
+            font-size: 13px;
+            transition: 0.3s;
+            line-height: 40px;
+            word-spacing: 5px;
+        }
+
+        .features div:hover{
+            background-color: #698f3f;
+        }
+
+        .features h3{
+            color: rgb(167, 212, 148);
+            letter-spacing: 5px;
+            font-size: 30px;
+            margin-bottom: 20px;
+            position: relative;
+            top: 25px;
+
+        }
+
+        .features p{
+            font-size: 20px;
+            position: relative;
+            top: 60px;
+        }
+
+        .title{
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #698f3f;
+        }
+
+        /* About */
+        .about{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 500px;
+        }
+
+        .about div:first-child{
+            background-color: #698f3f;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .about div:last-child{
+            padding: 30px;
+        }
+
+        .about button{
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            color: #3a3e3b;
+            background-color: #698f3f;
+            border: 2px solid #698f3f;
+            outline: 3px solid #698f3f;
+            outline-offset: 4px;
+            position: relative;
+            top: 85px;
+        }
+
+        .about button:hover{
+            background-color: #4b6630;
+            border-color: #4b6630;
+            outline-color: #4b6630;
+            color: #e5e5e5;
+        }
+        .about h3{
+            font-family: 'Grand Hotel', cursive;
+            color: #698f3f;
+            font-size: 30px;
+            letter-spacing: 3px;
+            position: relative;
+            top: -15px;
+        }
+
+        .about h2{
+            letter-spacing: 4px;
+        }
+
+        .about p{
+            word-spacing: 2px;
+            letter-spacing: 1.5px;
+            line-height: 30px;
+            position: relative;
+            top: 10px;
+        }
+
+        .about img{
+            width: 100%;
+            height: 90%;
+            border-radius: 10px;
+            transition: 0.3;
+        }
+
+        .about img:hover{
+            transform: scale(1.1,1.1);
+            opacity: 0.4;
+        }
+
+        /* products */
+        .products{
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            background: #3a3e3b;
+            height: 600px;
+        }
+
+        .products div{
+            border-radius: 10px;
+            padding: 10px;
+            flex: 1;              /* 3 khối chia đều */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .products div::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 35px;
+            width: 80%;
+            height: 4px;
+            background: #6b8e23;
+        }
+
+        .products button{
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            width: 200px;
+            height: 40px;
+            color: #3a3e3b;
+            background-color: #698f3f;
+            border: 2px solid #698f3f;
+            outline: 3px solid #698f3f;
+            outline-offset: 4px;
+            position: relative;
+            top: 140px;
+        }
+
+        .products button:hover{
+            background-color: #4b6630;
+            border-color: #4b6630;
+            outline-color: #4b6630;
+            color: #e5e5e5;
+        }
+
+        .products img{
+            border-radius: 10px;
+        }
+
+        .products h5{
+            color: #698f3f;
+            font-family: 'Grand Hotel', cursive;
+            font-size: 30px;
+        }
+
+        .products h3{
+            font-size: 35px;
+            position: relative;
+            top: 30px;
+            color: white;
+        }
+
+        .products p{
+            font-size: 20px;
+            position: relative;
+            top: 75px;
+            letter-spacing: 1.2px;
+            word-spacing: 3px;
+            color: white;
+            line-height: 40px;
+        }
+
+        .products h4{
+            font-size: 25px;
+            letter-spacing: 1.2px;
+            word-spacing: 3px;
+            color: white;
+            position: relative;
+            top: 30px;
+        }
+
+        .products .money{
+            position: relative;
+            top: 30px;
+        }
+
+        /* services */
+        .services{
+            padding:80px 0;
+            background:#ffffff;
+            text-align:center;
+        }
+
+        .services h3{
+            font-style: italic;
+            color:#6da23f;
+            font-size:28px;
+            margin-bottom:8px;
+            font-family: 'Grand Hotel', cursive;
+        }
+
+        .services h2{
+            font-size:22px;
+            letter-spacing:2px;
+            margin-bottom:50px;
+        }
+
+        .services-list{
+            width:1200px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .service-item{
+            width:30%;
+            background:#4b662c;
+            border-radius:22px;
+            overflow:hidden;
+            border:3px solid #6da23f;
+        }
+
+        .service-item img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+        }
+
+        .service-content{
+            padding:30px 20px;
+        }
+
+        .service-content h4{
+            color:#fff;
+            font-size:20px;
+            margin-bottom:18px;
+        }
+
+        .service-content a{
+            display:inline-block;
+            padding:8px 22px;
+            border-radius:20px;
+            border:2px solid #8cc152;
+            color:#8cc152;
+            text-decoration:none;
+            font-size:13px;
+            font-weight:bold;
+        }
+
+        .service-content a:hover{
+            background:#8cc152;
+            color:#fff;
+        }
+        
+        /* contacts */
+        .contact{
+            display:flex;
+            width:90%;
+            margin:80px auto;
+            background:#dff3f7;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .contact-left{
+            width:40%;
+            padding:50px;
+        }
+
+        .contact-left h3{
+            font-family: "Playwrite IN Guides", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size:24px;
+            margin-bottom:15px;
+        }
+
+        .contact-left p{
+            font-size:16px;
+            margin-bottom:45px;
+            line-height: 30px;
+            white-space: nowrap;
+        }
+
+        .contact-right{
+            width:50%;
+            padding:50px;
+            background:#dbf3f9;
+            
+        }
+
+        .contact-right h2{
+            text-align:center;
+            color:#6ba0a1;
+            margin-bottom:30px;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        .form-group input,
+        .form-group textarea{
+            width:450px;
+            padding:14px;
+            border:none;
+            background:#faf8f8;
+            font-size:14px;
+            letter-spacing:4px;
+        }
+
+        .form-group textarea{
+            height:120px;
+            resize:none;
+        }
+
+        .btn-submit{
+            width:450px;
+            padding:18px;
+            background:#3f4443;
+            color:#fff;
+            font-size:18px;
+            border:4px solid #ffffff;
+            outline:3px solid #3f4443;
+            cursor:pointer;
+        }
+
+        .btn-submit:hover{
+            background: rgb(121, 188, 220);
+            color: #2f2f2f;
+            outline:3px solid rgb(121, 188, 220);
+        }
+
+        /* slideshow */
+        .slideshow{
+            width: 500px;
+        }
+
+        .slideshow img{
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid rgb(0, 174, 255);
+        }
+
+        /* chat button */
+        .chat-button{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0084ff;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            text-decoration: none;
+        }
+
+        /* google map */
+        .map{
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        /* footer */
+        .footer {
+            background: #2f2f2f;   /* nền đen/xám */
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            height: 200px;
+        }
+
+        .footer .social {
+            margin-bottom: 10px;
+        }
+
+        .footer p{
+            position: relative;
+            top: 40px;
+        }
+
+        .footer .social span {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 18px;
+        }
+
+        .green {
+            color: #7fbf3f;   /* chữ màu xanh giống mẫu */
+        }
+
+        .social i {
+            margin: 0 8px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .social i:hover {
+            color: #7fbf3f;
+        }
+
+
+
+        /* lightbox */
+        .gallery{
+            text-align:center;
+            padding:40px;
+        }
+
+        .gallery img{
+            margin:10px;
+            border-radius:10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--Menu icon -->
+    <div class="menu-icon">
+        <i class='bx bx-menu open-menu-icon'></i>
+    </div>
+
+    <div class="left-menu">
+        <i class='bx bx-x disable-menu'></i>
+        <ul>
+            <li><a href="features.html" target="iframe">FEATURES</a></li>
+            <li><a href="about.html" target="iframe">ABOUT</a></li>
+            <li><a href="products.html" target="iframe">PRODUCTS</a></li>
+            <li><a href="services.html" target="iframe">SERVICES</a></li>
+            <li><a href="contacts.html" target="iframe">CONTACTS</a></li>
+        </ul>
+    </div>
+    <!--Top menu-->
+    <nav>
+        <ul>
+            <li>FEATURES</li>
+            <li>ABOUT</li>
+            <li>PRODUCTS</li>
+            <li>SERVICES</li>
+            <li>CONTACTS</li>
+        </ul>
+    </nav>
+
+    <iframe name="iframe" width="100%"  height="500px" src="mainHeader.html" frameborder="1"></iframe>
+
+
+    <script>
+         var disableIcon = document.querySelector('.disable-menu');
+        var leftMenu = document.querySelector('.left-menu');
+        var openMenuIcon = document.querySelector(".open-menu-icon")
+
+        disableIcon.addEventListener("click",function(){
+            console.log("ok");
+            leftMenu.style.display = "none";
+        })
+
+        openMenuIcon.addEventListener("click",function(){
+            leftMenu.style.display = "block";
+        })
+    </script>
+
+
+
+    <!--Features-->
+    <h2 class="title">FEATURES</h2><br>
+    <div class="features">
+        <div>
+            <h3>MADE WITH LOVE</h3>
+            <p>Our tea iis made with love, from the collection of the leaves to the brewing</p>
+        </div>
+        <div>
+            <h3>RELAXTATION</h3>
+            <p>Set aside axniety and relax after a hard day with a cup of hot tea in your hands</p>
+        </div>
+        <div>
+            <h3>ENERGY</h3>
+            <p>Our tea will energize you with vittamins and invigorate the rest of the day</p>
+        </div>
+        <div>
+            <h3>FAMILY RECIPE</h3>
+            <p>All our recipes are pased down from generation to generatiuon for a long time</p>
+        </div>
+    </div>
+
+    <!--About-->
+    <br><h2 class="title">ABOUT</h2>
+    <br><br>
+    <div class="about">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9fJlULdLCU6ngWMsEZ0XnKa8gv7QuAkBUOg&s" alt="">
+        </div>
+        <div>
+            <h3>About our</h3><br>
+            <h2>TEA STATION</h2><br>
+            <p>
+                Once upon a time we only had a couple of teapots and enjoyed tea only with our family.
+                Over time, we were able to afford to buy a small tea plantation.
+            </p><br>
+            <p>
+                Now we have a whole teahouse and we delight many people delicious and hot tea.
+                We serve black long tea, relaxing green and jasmine tea,
+                tea with spices and many others.
+            </p>
+            <button>LEARN MORE</button>
+        </div>
+    </div>
+
+    <!--Products-->
+    <br><h2 class="title">PRODUCTS</h2>
+    <br><br>
+    <div class="products">
+        <div>
+            <h5>Check out</h5>
+            <h3>OUR PRODUCTS</h3>
+            <p>
+                Our assortment includes long tea, relaxing and invigorating green tea
+                with spices, lemon juice, jasmine, cinnamon and anise, milk tea and
+                many others.
+            </p>
+            <button>Inventory</button>
+        </div>
+
+        <div>
+            <img height="310px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxyY4HrPFUCmjDzTqBYHor65_nVlARcFPzxQ&s" alt="">
+            <h4>Black long tea</h4>
+            <h5 class="money">$ 3.99</h5>
+        </div>
+        <div>
+            <img height="310px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkAcxDeYfHsglLyaWnFnUo7orFs3bk9TU-pA&s" alt="">
+            <h4>Green tea with jasmine</h4>
+            <h5 class="money">$ 4.99</h5>
+        </div>
+    </div>
+
+    <!--Services-->
+    <br><br>
+    <section class="services">
+        <h3>Explore</h3>
+        <h2>OUR SERVICES</h2>
+
+        <div class="services-list">
+
+            <!-- ITEM 1 -->
+            <div class="service-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoHyWT0re6-VxlUyRQwPDKCgHjle2dIIAqhQ&s" alt="">
+                <div class="service-content">
+                    <h4>Custom Recipe Service</h4>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="service-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCIZBexYMHxVUak6vZLx_25ZSqgXjU2jUmEQ&s" alt="">
+                <div class="service-content">
+                    <h4>Tea Party Service</h4>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="service-item">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUQEhMVFRUVFxUVFRUVFxYYFRUXFRUYFhUVFRcYHSggGBolHRcWITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFRAQGy0dHx0tLS0tKystLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tKysrLS0tLS0rLSstKzctN//AABEIALcBEwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAEAAECAwUGB//EAEkQAAIBAgMFBQQGBggDCQAAAAECAAMRBBIhBTFBUWEGE3GBkSIyobFCUpLB0fAHFBWC4fEjM1NiY3Ki0kOTshYXJDREVIPC4v/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAHxEBAQEAAgIDAQEAAAAAAAAAAAERAhIhMQNBURNh/9oADAMBAAIRAxEAPwDssBi109q3jNFyTunOYbBtymkmHddxInmya9R8WDMxsRbQiaoeoRr8oBiKFzedIxUMPi7cJo0sRSYWK6zHaiRwkkBlvGJOVG16AGoMELw/D4jgwBHWXVaKN7unST0vtlZbxu7hzYW2sGcSxmqGp9YyJrrLpIWlEDQvKa2DYcJp0MQotdbzQXF0mGW2Uc+PlM+YvhzK4Fjw3SqzIbi4I4zusLSw4GhF+bHX0guMbDC+mY8rafGNv2eHEYiqWNzvgzNNfH0lLEqLDgJm1KU6RihmcyJaWskgUmmVDGUtCWSVlJUDESJhBSRKQKIrSzLFaBXaK0stFAiFjESRMgYEWlbSZEgRKKzK2lpWQIgVxSVopB7BhsOw1hGtva18pWtc3hC1Ad5nlkemha1MsLAEQJsEwNpv0yOckxE1GWEmBMsXZvhNKpVAlTVhyjyBVwKr7ynxEtGHpcPjFUN+JlPdjmZRHEYYb7wB8OYeydZUwliUD3Jjd0YZeRLS6mBe7jhZcbStxCJ06gG/WV1qt5U0raMXUK2sEdYS0pYSoGZZWyQhhIES6gZkkGSElZArGmBisrKwopImnLpgQrIlYUySspLqYHKxrQjJFljUDWjZYSVEjljTFHdyLJLyJAwodklZSEkSJWNQLlihGWKXR6SjGEJfkYPSqQylXnm16MTVW5GSLt1kxi+kRxF5UxQzSBMtZpWVl1MQvGLSfddRJfq394Rp1DlpAmEimOMY0l6xpgQyBEKdBKWEaYoMgRLiJEiXUwOwMrKmEkSJWNMCMsrZYYySs047GBCkgacMNORNKOy9QRpxu7hhpSJpx2TqDNOQZIaaUgaUdjqBKSBSHGlG7iXUwD3cYpDjQkDQjTAJWRKww0ZE0ZdMBlJEpDTSlbUxLqYDKytlhhSQKRqYDyxQrL0ijTHao0IR4PJrOTqKDSQeUKZIGTVwQGj95KA8lnhcW3jXlXeRi8amLQJMIvEwbNFnmbVxc+Xl8YO4EfNEDJ2XFdosvSWgyYczN5tTjApp9I64ZjuEJAl9JZi/JWpwgMbNqfVMc7MfiPv+U16LWhSVjJ/Sl4455dmGxOunQ/hKzs5vqt6GdbSqabpF6x5CXt/rO+fTk32aeTfZMg2z25N9kzpajMefrIFz9X4zP9K31cucG3Iy2lg1sc33zfqPfhKai9B6R/SrOEc7Vw44SnuZt1KAlBpCbnyMXgATAO2oETbNbjpDgTIuTzmu9TrGdVwQHGCvh5pvKWtNzlWbIzWpiVunSaDnlB6hm5WLALJKikLeVMJrWcD931iltoo1MdWBJCcovbigQR7hBO/2gRe3s24n7jA37X2c2qKVI0NrWPUcZjy6eP129485jZ3ak1wO7QZ9zAnTcxJH2fjN/CYsOga1vZDeu60zbjUmirx5x23dtsoKirZ76KLa68Pj6QPD9tipUMLswsb30NtNAeok8r4d9HCznuy+2zWOVwctrhyLa31W1/DWFdqts/q1MMntMTa/0RYi4J4HX4THbzjfSZrYyRZJ5fje1tbvBUSqTqPYGiEWHs246zqMLicbWTIamHw7mxArVBTqEE3/AKqzOvAWYDjNZyZ3g6jJGyTlcR2hSjZK2MRmG/8AVqfeDfcjOzDUbt0ordt8OT7NSsBYiwoJvI0NzU4TN4c/xe/x/rsSvON3q3te55DUzjB2uospQ1K5J3M1FQB1IVyTBsPtcC1sbRLDcXo4heBvcCmeOU6cpi8Of41Ofx/rv8PVDGw3i2njrDEWeZ7PxeIFdan69hcn0lJrgWtwVqOh3a3nXVdtUWVQcTQ1vmC1NG0ta7AW+E58uHOfWt8efC/eN5cZTBy51zAXIuL24m0LpuCARuM87oqWPsq/sUzlrLZ10JYpemzW4a7zynV4XEqpzn2VGmum/QFhvHpxnK2y+Y6dZZ4rpKLxMwgNTGooGo1Fx10v8hB6W10Klmso4G9weBm+8nhx/nfbULStnmBV2kXZWRwE1uQbjcGve9rW+c0MJtBKihkYMCAQRxBFwbTM563/ADwTUaUmoRIVa4G+cxtntdSpYhMJbMXKgsGFkLOAA3lc+nOakt9Fsnt0rtKKhkDiRewIvykGxA6TcZobE4hVIB3n4eMTkcxru6znam3aBxTq7FcqkBGFmdr6gA+C2ExsXtyrUqXBCoGAVdNW4XFr2tr8p1krnbHbOJQ4iwmILIrMAG423XG+1+ETtNys2B3EoeXuYJiq4QZmNhxPKblZsqLyppn4va3tKE4k3JAtuJ4+G6X/AK6jqcjAndbrxAm2FpI5iKYNNSRe17311118I0qY5sKOnpJZRyEqzSYM57WDhRv1HgSPvkwfzeV6yVzG0P3K9fIx/wBWW5e7aAkm40t5RAz0XsV2ESvQNfEhilW2SmGy3QEHOzDWxIFgCNBfW+l49rcHC7O20aP9VWZbixBXMLee7+JkcRtFqoWma1/oqopkXJI0AG++gnrG0ewWyqdFgKVRWtoyVKjPc6AIKjFSSSALjiN04fb/AGOxeGdVwlKpXSxYvTslQMT7jhal2IAFiNNTa06/zns73M1dsLs8EqLRvnrkBqjLp3FMkgKhGvePqM3ABrWtr6A1OnQolQq3IIyqAFA3WAE8lwW08Zg6garTxNPMcpWuKgR+itUGjb7WM7f9f7yiaiHMHQlee46EcCDcWi8U15hjGJdhu1Pne0oWi3X1E2du7LrF8yUajAj6NNzx6Dw9JgnZOK/9tX/5FX/bNMijh2tckjxIt85AN1vBHwtZBd6NRbfXRlA9QJKkzNYDW9gAOJO61t5kBqt1+cupYgg/jrLqvZ7GIodsNWCmxuKbGw6gAlfO0AZuG4jQ309Yxdrp8JSYgPTJ5ggD8biaf7S7xe4xWddQVqro4INwTf3xfgZzOzMS6AjLnB1FmAsePObNLEo65aiuPLNY9CJy5cf2NceVnoHtPCYyg4qBzWpm+VwbrY8wfdNpmU8Ti1GX27HXedDvuJ1GErGldQwqUj7ykHQf3lO7xlO0dgnSrQb2GIFj9FmO4m24njHXj+Nd+X65zEY3FkMD3hzcrgC++yjQXHIQzY+38bQpGmgYA3sSlyPAkSVFQc2WqLqzLZ1sGynUoQTpfTW3lGC1xu1Gnutv9D+bSXjx9WLOfL3p8b2txrAK+nEnJlLeP8JzmOxVWoxeoWZjxOunLoOk6D9brjfn66tIHaVQbyb+XLr1l49Z6icuVvuhX7TViqpnKhQB7Jyk2AHtEb90OwXbBkQqy95Y3Uszaa8efGVftJuNjyuiHgOnOP8AroP/AA0P/wAY/CLx436Jz5T7Ym0cWz1DVFgSxYW3g7xY/fLTt2q2UM9yp97QMfEjWajPTJ1or45bcbcpTiO4sbJTDcL5gL342ImvDO39X0e11ZaRQMSfoOWuU4EdeG/daE4PttXU2c5rLuIGp5k2vMIUr/Qon96oN5t1iFH/AAV8qh4m3FOcdJ+Nf05frpqvb9iNKSg8yxPnawnN4/btWpfOwIPCw06St8OvGiw8KinpxXnKjh040qnk1M7t/EROEiX5OV+0sFtapSIy2NuDajXeJcduvvUBTe4y+f3G0Dagn1Ko/dU/J5Khg0Y2uy/5ksPXNNZE7U/7TfTXcAPQWjS07MT6/wAP4xR4NoyrWPAn1P4xCqfrH1/jNbv6Y1NKn9n8JZ3lP+yp+n4TPkxkvXA1uv8ApJ9Ly4Y2nfcp8aY/GaQWn/ZJ/r/GJqdIamkvq/8AugwPs+tTqVERhTCllz2UA5L3cjrlBne9kf0gLjKz4VQKeXWmALXRdLb+Aty+M8/2myLTdkRQ1soN3PvkU9xa30oNsDaQpVaGXQI6stvqlgj39b9fKdPjuM8o93q4lQ3tMutveI1sBuvLKVdGFxlPVCD8pzW1QrMGZb+yAAfE8jMs93e+QA8wSCPjO19sR2u1MLTxFF8PWGem4sQd45MrcCDYg9JzmysBW2bT7unVqshYsahClbkAe7Y5dAPHnKaG1ai6Cq1uTZX+J1+M0KHaFhq4UgAkkXUgAamxuD6iTIDsF2tZGSnXAZahyo6EXv1W4+A06yWN7S4c1DSDAnUDUDX52362nlXaXtUXw5xSKUq4hzQpa3KUVNyUA91i1luNbgzlMDga1PUui31KFzmvfQ3tlDX/AL1+Exvlp7nj6NUjvKXvruTvG9rmM590/PjpOX2f2kBqF6wp06oJGcUlD2GhWoQA1wb/AIb5r9iNrGvh/a/rKZyP5bj+eYmd257NGt/4igLv9NRva25lHFuBHEbtd/Xl5mxiOrwO2qbgF7WOodSLW5hhofQeMOxezlqC/s1VO7MBmt0O/wA1M8+7PbC716Fag9SiMwTF0l0am+4MUYe4Tl3jceYM2dsbWqbOrd0D3qHgos5tbfS91zY3zLbcTacbZ6bmrNo9nKZv3YFNuToKijyJDf6pye1Ni4xL5aNCqP8ADJVvNWt6Ameh7J21h8UmZTrppxU8AQdQN/TlJV6HT5Sz45TvXjdTE100bCOtv7lRfiVhybaampKAlWFnU7xfeGRk3aaEHrpPTFYqdN3K8Lp17jT5/wAI/kd3kWznwD1AcRTfKdCUqAWud+W5zbybDmeM9M2d2F2ZVUOgYhgGVlqOQ4toVN9fD1mqK/OSFVvLlwj+Z3ZdbsLs9dA1cf5ahP8A1XEzMZ2IoEf0WIrA/wCIKbr/AKVU/OdgPbHX4/xgGJBH3yz4+KXlXl+3Nh18NculOqgCkugIsCbXZTcqOuo6zH72id6fW90/V3nhPXWwzVMmUe1mycbWcEi9uAIP2jPOe0WxFRntTKsrsGpi50v7y+FxcbvaUjQznz4yVrjbWV3dHgzL/IHhfmIhTH0a/qf4ykYS30Kno3T8JXXpkKQtNr6WJvpqL7+gnPw0LahV+sreIB+4ysq430qR/dW/wgao3K3heTGIcfTPmb/OZ7RVpYcaA8i4+RlLvT4o437mPHfvl1PaBHvKrddQfgbfCFYSp3gNkqkj6i94BfdfUWmpUxmFqd75qg1vrY9OA5SBprwq8veW27dxmxicKVFyEPpcdCLaGBsicUHxHyM15MAih/iJ6/wihXc0vq/ExR5TFwvJgH82iW8tE0qCsR+TJisfyR/CWZfzf8YzJ0+H4SKF2kxNJ7DUAHQf3ltu62nOI7AsCLMFe19639q32vhadDtEf0b29klW115Ejd1AnPM6rTIQWDLdrm5zFha/LTMLcw0sYr0/F9oB3lKiVP8AS084fNcXF7rltpvvv5ydSqZyuOR6mEw1alfvaS0nW19fZUMAeem7ledls3tLtGlRWtUpmpSNvYrKRUUbiM2hNjxN7ix5ztusBDVMD21i8uHqnmhX7dl++dpgu1uArgCrSWkx+uoI+0B9wl+1uzeDxVEhACp1vTc2JGoBKndf5CM8K8j22606WEB07vDl/BqrnOR1uth/mnPrtCoM9iPZIGXKpUjUWNxdr237+Vpr9sXz1mpllUoFRQfZDd2gZhfcPacnXlvmIBkawOY5PaA19tV4cxpa85VXffo42mq1ygBy1VsVv7jJe4ud+ul+Vp6cKqncfIzw3spiu7rUL23lTrc7iGvbjqDPUHQjifKdfj5XzE5SZK36lNGtmVWtuzAG3hfdGrUA4sWYjkx7wcNy1cwG7gJy1XFsu5j6mQG1qo+lN3L7jE1sNsFFqpWQ5CpN8gsXB3q1jlsbfV8LaTUONtodR8Zwe3+2NTDougd391ToABvZunDrMEfpFr/So0j4Fx+Mm8ePhcterNiEPEfKQDjeCJ5b/wB4zDVsMvlVP3rLaf6R6drnDt5Oh+YEd+Kda9MxYZ1srlG3hgAd3AhgQR+dJmO+PutMGkAWu1ZQdFFjbu2v7R1G8jwnH0/0jYfeaVceHdn/AO0Lp/pEwummIH7gPyaO3G/Zleh08TYwhsQGFjPOKn6RMH/j/wDL/FpRU/SJhuCVj+6g+bx24mV6JmIuFYqSVIINiMrX3jdfd5wR9jivUFSuECrm/o6dyGzKUJeo3tN7J3ADhqbTg0/SNT3rRqHxZB8iZtdn+3RrhytELkIUhzmvcXB9m0zetutTY43a9B8PWqYdma9NiL33rvVul1Knzg366/13HmZ0/aDaAesxcYdmIUk1KQZtwst7bgNB0mYK6kW7rDeShfkRPJfj8u0Zn64/9o/rGGOf+0bztD6mGpt/wk/dep9zmVPgKZ0CVB4MR8WUydavUKcbU+v6qJFsW/NfNf4wmpswWtep6oT8hKTs7hna/VF+54zkdaoqYlzxQeAP4wdmqEe8IW+z2G6ot+RDX9ADB6mDcbsh/eI+YEucjrVB7zmPjFHNGryX7a/7oozkmVoKeRlq1mHC/hBVaWLOrIpcQOII8R98kuJHA/GDAdZFkB4CFX4jEC2u7S45i+oHlcTk9pAJ7AZXJJJZb2y3JUa/5jOhaj4j4wOpstCb5VPwhmqNndrMRRVUVhlUAAZV3DhqDNvZ3bSq1/ZSwsTdQMx/cK3O/hMR9kJ9Uj4yltm20U+U1tTHbUtt0nuXpkA8VtUXxYixHhrNDA4kXDYeqQf7rWbnu0Nulp5e2HdTcEg8wSD6iXU9qVl3kN/mGv2hZvjHamNDtSt6js5N+8qg2Fz7tPwA3jiJMVNXZbKSqmob3yh8qqum/Q3g9Wv31N3I1BzMLknLlCvqd50p6ePKZlKubZSbd7nz8tRZL9AbkRoPoAp3LAg3qaEccxPpw9Z7QlGpVGZEJB4jd6zxzF0j3VEhTo6kgAnLxN/jO3w22FVbrVKnpnU/Ka+P7Tk6R9g1zvAHiRI/9nKnF1HrMBe1VUbsX9og/wDUDLF7Z1ONeif8wX7rTrvFjK5Lt3snEUsQXYFqbABGW9gANVNtxvc+c5c1DzPneesntVm984dvM/7jIHbeFPvUaZ8Kn/4nO8Zb7a2vL6i6X/P8fGVndPUn2hs4+9RH+lvnaDsdkkXGHBPLLT+dz8pOn+r2eancP4yurw3eYv8AfPQnp7OJ/wDL0gOAub+oUfKJcFs0n+pXyqMPuk6/6a4RB0G76v8AHSTcj8g/PjO9als0f+np/vFm+YipYjZo34Wlfmq/cV++Ov8Aprz6tVZTlA1sCSRc66gC/S0739HeyK9SjVqqBqV0NlvbNu4fKaqbZwQ1Sj/psPUXlidriG/oe7S9lsA9QgDd7I0H2YzPsnlzO06hGMr03FiopXB55NfmI2UchM2tjK9bGVK9RXswyhithZbBdwsOPrDc3WYrcWZByiy8iRK83URwxgWB2G5z6mI1n+t6j8ZUXMYv0hVprNxynyEg2Jfdaw6XHykDUkWaDUC3Q+piizDnFAoWr+eMuWoPCUWBjheRlZGK0kIECRJrX/JgFXjkSlaoP5++WBh/KFOVkWXnJ3kr+EAV6I5QatgVM07DkYsghGJTotSOZdem+/AgjwJHnK6uJwy+0KVnG4EnKD0U7tb7yZvmiJB8MOIgchVxDElr6nXQyxscb3GYeDGdG+zkPAeglTbHSDGENpVODt6yX7VrfXPnNc7DHA/CVnYkgzhterxsfEH8YzbVc/RTzQGHnYo+t8JH9hk7iIGf+0n+rT+wI42m/JD4qD84cdhNzHxkTsNukAE7Qfkn2E/CTTaJG9VP7q/hCzsRov2I3SAHX2o5N1CDp3dM28LrKDjah+r/AMun9yzT/YrR/wBjtKAaGPq33J4mmmnna82aGIcgZqt+YUm3hqfugo2V1llPZo5mQg0VBLO96yinhrS9afSFSzeEV+nxiFIRxS5GAr+MQfr8I/dnnFlbiIESfCVuOkm3USs28PhKIk9DHisOZigDiSvKw0cGEWhjJXBlccQHyDhEbiMDHuYE0xB4y1MQIOW5xiogHZ77jJhpmWI3GTWsw6wNLN5R80BXF85aK4MAoP0/PCPnEGDiSzwq8ERA/n+cHzxCpAIvIso6Ss1Ii8CQFtxI89I4Y9D8JWG6xi0CwVRy++LvF8JWWkWbw8Pz5wCBbhHN4K35tEGPA+sIJtzEgUX+Uq71ukfv+YMCfdjgY3dnmPlEKoPKOSIVEgjh98RfhJRZj/OAs0Rbr6yLeEiV6keMCRaQZuYjG/QyBY8jCEXHL5RSHeR4AQMkI8UoQMlmiigODHIiigMDHMUUgQj3jRQHtIFIooCDEcfWTXERooFqV78ZM1I0UBxUj5oooDBvzrHzxRQFnivFFAYN5fziLc4ooCZ4oooU5HPWRAjRQiSseBiFU8tIooD9+OVpNWvFFAY+UqMUUCJbrHiigf/Z" alt="">
+                <div class="service-content">
+                    <h4>Home delivery Service</h4>
+                    <a href="#">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contacts -->
+    <h2 class="title">CONTACTS</h2>
+    <section class="contact">
+
+        <!-- LEFT -->
+        <div class="contact-left">
+            <h3>ADDRESS</h3>
+            <p>
+                FPT Polytechnic<br>
+                QUANG THANH - THANH HOA
+            </p>
+
+            <h3>EMAIL</h3>
+            <p>THUYLINH@GMAIL.COM</p>
+
+            <h3>TELEPHONE</h3>
+            <p>+ 123 456 789</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="contact-right">
+            <h2>contact us</h2>
+
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="N A M E">
+                </div>
+
+                <div class="form-group">
+                    <input type="email" placeholder="E M A I L">
+                </div>
+
+                <div class="form-group">
+                    <textarea placeholder="M E S S A G E"></textarea>
+                </div>
+
+                <button class="btn-submit">SUBMIT HERE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= GOOGLE MAP ================= -->
+    <h2 class="title">Google Map</h2><br>
+    <section class="map">
+    <iframe class="google map"
+            width="90%"
+            height="500"
+            style="border: 3px solid rgb(0, 174, 255); border-radius: 10px;"
+            loading="lazy"
+            src="https://maps.google.com/maps?q=fpt%20polytechnic&t=&z=13&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="social">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <p>
+            © 2021 <span class="green">TEA STATION</span>.
+            Designed by <span class="green">JOHN SMILGA</span>.
+            Coded by <span class="green">ANTON ZHIRKOV</span>
+            in learning purposes only.
+        </p>
+    </footer>
+
+   
+    <h1>LAB 7.2 JAVASCRIPT KHÔNG CẦN VIẾT CODE</h1>
+
+    <!-- ================= VIDEO YOUTUBE ================= -->
+    <br><h2>Video YouTube</h2>
+
+    <iframe width="560" height="315" style="border: 3px solid rgb(0, 174, 255); border-radius: 10px;"  src="https://www.youtube.com/embed/3Q0qo3-yYv8?si=NFbCtoYlEBLq7JFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- ================= SLIDESHOW ================= -->
+    <br><br><h2>Album Slideshow</h2>
+
+    <div class="slideshow">
+        <img id="slide" src="https://picsum.photos/id/101/500/300">
+    </div>
+
+    <script>
+        let images = [
+            "https://picsum.photos/id/101/500/300",
+            "https://picsum.photos/id/102/500/300",
+            "https://picsum.photos/id/103/500/300"
+        ];
+
+        let index = 0;
+
+        setInterval(function(){
+            index++;
+            if(index >= images.length) index = 0;
+            document.getElementById("slide").src = images[index];
+        }, 2000);
+    </script>
+
+    <!-- ================= CHAT BUTTON ================= -->
+    <a class="chat-button" href="https://m.me/" target="_blank">
+        💬 Chat với chúng tôi
+    </a>
+
+    <h1>LAB 8.1 JAVASCRIPT KHÔNG CẦN VIẾT CODE</h1><br><br>
+    <h2 style="text-align:center">TEA STATION</h2>
+
+    <!-- LIGHTBOX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js">
+    </script>
+    <section class="gallery">
+        <h2>Products</h2>
+        <br>
+        <a href="https://picsum.photos/600/400" data-lightbox="tea">
+            <img src="https://picsum.photos/200/120">
+        </a>
+
+        <a href="https://picsum.photos/601/400" data-lightbox="tea">
+            <img src="https://picsum.photos/201/120">
+        </a>
+    </section>
+
+</body>
+</html>
